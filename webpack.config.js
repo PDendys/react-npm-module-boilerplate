@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
 
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
@@ -31,11 +31,19 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(ts|tsx)$/,
+        use: [
+          {
+            loader: 'ts-loader'
+          }
+        ]
+      },
     ],
   },
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'index.js',
+    filename: 'index.tsx',
     publicPath: '/',
     libraryTarget: 'commonjs2' // this is needed to allow the module to be exported and imported
   },

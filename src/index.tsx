@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const SuperCoolComponent = () => {
-	const [count, setCount] = useState(0);
+	const [count, setCount] = useState<number>(0);
 	const updateCount = () => {
 		setCount(count + 1)
 	}
